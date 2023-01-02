@@ -21,8 +21,9 @@ public class Images {
 
     private Long id;
     private String name;
+    private String url;
     private String year;
-    private String album_id;
+    private Integer  album_id;
     @Lob
     private ArrayList<String> tags;
     private String location;
@@ -30,7 +31,7 @@ public class Images {
 
     public Images(){
     }
-    public Images( String name, String year ,String album_id, String location , String notes){
+    public Images( String name, String year ,Integer album_id, String location , String notes){
         this.name = name;
         this.year = year;
         this.album_id = album_id;
@@ -38,7 +39,7 @@ public class Images {
         this.notes = notes;
     }
 
-    public Images( Long id, String name, String year ,String album_id, String location , String notes){
+    public Images( Long id, String name, String year ,Integer album_id, String location , String notes){
         this.id = id;
         this.name = name;
         this.year = year;
@@ -71,11 +72,11 @@ public class Images {
         this.name = name;
     }
 
-    public String getAlbum_id() {
+    public int getAlbum_id() {
         return album_id;
     }
 
-    public void setAlbum_id(String album_id) {
+    public void setAlbum_id(Integer album_id) {
         this.album_id = album_id;
     }
 
