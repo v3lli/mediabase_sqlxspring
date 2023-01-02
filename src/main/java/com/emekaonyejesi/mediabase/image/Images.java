@@ -3,6 +3,8 @@ package com.emekaonyejesi.mediabase.image;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+
 @Entity
 @Table
 public class Images {
@@ -21,6 +23,8 @@ public class Images {
     private String name;
     private String year;
     private String album_id;
+    @Lob
+    private ArrayList<String> tags;
     private String location;
     private String notes;
 
@@ -35,6 +39,7 @@ public class Images {
     }
 
     public Images( Long id, String name, String year ,String album_id, String location , String notes){
+        this.id = id;
         this.name = name;
         this.year = year;
         this.album_id = album_id;
@@ -72,6 +77,14 @@ public class Images {
 
     public void setAlbum_id(String album_id) {
         this.album_id = album_id;
+    }
+
+    public ArrayList<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(ArrayList<String> tags) {
+        this.tags = tags;
     }
 
     public String getLocation() {
