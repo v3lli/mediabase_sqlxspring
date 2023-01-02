@@ -2,6 +2,9 @@ package com.emekaonyejesi.mediabase.image;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.ArrayList;
 
 @Service
 public class ImageService {
@@ -11,8 +14,8 @@ public class ImageService {
         this.imageRepository = imageRepository;
     }
 
-    public Images createImage(Images image){
-
-        return imageRepository.save(image);
+    public void createImage(Images image){
+        imageRepository.save(image);
     }
+
 }

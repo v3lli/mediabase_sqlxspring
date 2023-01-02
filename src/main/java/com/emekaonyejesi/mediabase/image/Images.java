@@ -31,17 +31,19 @@ public class Images {
 
     public Images(){
     }
-    public Images( String name, String year ,Integer album_id, String location , String notes){
+    public Images( String name, String year ,String url , Integer album_id, String location , String notes){
         this.name = name;
         this.year = year;
+        this.url = url;
         this.album_id = album_id;
         this.location = location;
         this.notes = notes;
     }
 
-    public Images( Long id, String name, String year ,Integer album_id, String location , String notes){
+    public Images( Long id, String name, String year ,String url, Integer album_id, String location , String notes){
         this.id = id;
         this.name = name;
+        this.url = url;
         this.year = year;
         this.album_id = album_id;
         this.location = location;
@@ -54,6 +56,14 @@ public class Images {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public String getYear() {
