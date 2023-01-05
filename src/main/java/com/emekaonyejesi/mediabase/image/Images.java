@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 import java.util.ArrayList;
 
 @Entity
-@Table
+@Table(name="images")
 public class Images {
     @Id
     @SequenceGenerator(
