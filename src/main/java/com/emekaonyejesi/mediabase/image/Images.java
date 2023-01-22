@@ -2,7 +2,6 @@ package com.emekaonyejesi.mediabase.image;
 
 
 import jakarta.persistence.*;
-
 import java.util.ArrayList;
 
 @Entity
