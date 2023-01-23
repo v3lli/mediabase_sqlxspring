@@ -2,9 +2,9 @@ package com.emekaonyejesi.mediabase.image;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ImageService {
@@ -20,5 +20,14 @@ public class ImageService {
 
     public List<Images> getAllImages() {
        return imageRepository.findAll();
+    }
+
+    public Optional<Images> getImage(Long imageId ) {
+         boolean exists = imageRepository.existsById(imageId);
+        if (!exists){
+            throw new IllegalStateException("Immage with" + imageId + "does not exist in the database");
+//
+        }
+        return imageRepository.findById(imageId);
     }
 }
