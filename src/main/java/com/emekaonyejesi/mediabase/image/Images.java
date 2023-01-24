@@ -76,7 +76,7 @@ public class Images {
     public void setName(String name) {
         this.name = name;
     }
-    public boolean getIsDeleted(){ return isDeleted;}
+    public boolean getIsDeleted(){ return this.isDeleted;}
     public void setIsDeleted(Boolean isDeleted){this.isDeleted = isDeleted;}
 
     public int getAlbum_id() {

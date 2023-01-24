@@ -26,5 +26,9 @@ public class ImageController {
     public Optional<Images> getImage(@PathVariable("imageId") Long imageId){
         return imageService.getImage(imageId);
     }
+    @PutMapping(path = {"imageId"})
+    public Optional<Images> softDelete(@PathVariable("imageId") Long imageId){
+        imageService.softDelete(imageId);
+    }
 
 }
