@@ -27,19 +27,21 @@ public class Images {
     private ArrayList<String> tags;
     private String location;
     private String notes;
+    private Boolean isDeleted = Boolean.FALSE;
 
     public Images(){
     }
-    public Images( String name, String year ,String url , Integer album_id, String location , String notes){
+    public Images( String name, String year ,String url , Integer album_id, String location , String notes,  Boolean isDeleted){
         this.name = name;
         this.year = year;
         this.url = url;
         this.album_id = album_id;
         this.location = location;
         this.notes = notes;
+        this.isDeleted = isDeleted;
     }
 
-    public Images( Long id, String name, String year ,String url, Integer album_id, String location , String notes){
+    public Images( Long id, String name, String year ,String url, Integer album_id, String location , String notes, Boolean isDeleted){
         this.id = id;
         this.name = name;
         this.url = url;
@@ -47,39 +49,35 @@ public class Images {
         this.album_id = album_id;
         this.location = location;
         this.notes = notes;
+        this.isDeleted = isDeleted;
     }
 
     public Long getId() {
         return id;
     }
-
     public void setId(Long id) {
         this.id = id;
     }
-
     public String getUrl() {
         return url;
     }
-
     public void setUrl(String url) {
         this.url = url;
     }
-
     public String getYear() {
         return year;
     }
-
     public void setYear(String year) {
         this.year = year;
     }
-
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
+    public boolean getIsDeleted(){ return isDeleted;}
+    public void setIsDeleted(Boolean isDeleted){this.isDeleted = isDeleted;}
 
     public int getAlbum_id() {
         return album_id;
