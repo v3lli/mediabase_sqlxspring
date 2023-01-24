@@ -25,9 +25,21 @@ public class ImageService {
     public Optional<Images> getImage(Long imageId ) {
          boolean exists = imageRepository.existsById(imageId);
         if (!exists){
-            throw new IllegalStateException("Immage with" + imageId + "does not exist in the database");
+            throw new IllegalStateException("Image with" + imageId + "does not exist in the database");
 //
         }
         return imageRepository.findById(imageId);
+    }
+
+    public void softDelete(Long imageId) {
+        boolean exists = imageRepository.existsById(imageId);
+        if (!exists){
+            throw new IllegalStateException("Image with" + imageId + "does not exist in the database");
+        }
+        Optional<Images> image;
+        image = imageRepository.findById(imageId);
+        image.setIsDeleted(true);
+
+
     }
 }
